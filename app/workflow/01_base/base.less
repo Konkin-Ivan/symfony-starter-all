@@ -1,0 +1,138 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  @font-face {
+    font-family: 'RobotoRegular';
+    src: url(../fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'FontDocker';
+    src: url(../fonts/docker/dockertwo.ttf);
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'FontDockerH1';
+    src: url(../fonts/docker/dockerone.ttf);
+    font-display: swap;
+  }
+  :root {
+    --theme-bg         : #fff;
+    --color            : #3c4043;
+    --link-color       : #1a73e8;
+    --header           : linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5018382352941176) 70%);
+    --card-tiser       : #f5f5f5;
+    color-scheme       : light dark;
+    --icon-github      : background url(../images/icons/github-dark.svg) no-repeat;
+    --icon-download    : background url(../images/icons/download-dark.svg) no-repeat;
+    --icon-viewcount   : background url(../images/icons/view-count-dark.svg) no-repeat;
+    --icon-commentcount: background url(../images/icons/comment-count-dark.svg) no-repeat;
+    --icon-starcount   : background url(../images/icons/star-count-dark.svg) no-repeat;
+    --bg-menu          : #e4e4e4;
+  }
+  
+  [data-theme="dark"] {
+    --theme-bg         : #202124;
+    --color            : #e8eaed;
+    --link-color       : #8ab4f8;
+    color-scheme       : dark;
+    --header           : linear-gradient(90deg, rgba(26, 115, 232, 1) 0%, rgba(26, 115, 232, 0.4514180672268907) 70%);
+    --card-tiser       : #2b2b2b;
+    --icon-github      : background url(../images/icons/github-light.svg) no-repeat;
+    --icon-download    : background url(../images/icons/download-light.svg) no-repeat;
+    --icon-viewcount   : background url(../images/icons/view-count-light.svg) no-repeat;
+    --icon-commentcount: background url(../images/icons/comment-count-light.svg) no-repeat;
+    --icon-starcount   : background url(../images/icons/star-count-light.svg) no-repeat;
+    --bg-menu          : #3b3b3b;
+  }
+// =============================================================================
+// Typography.
+// =============================================================================
+
+:root {
+  // Text sizes.
+  --line-height: 1.5;
+  --font-size-base: 1rem; /* 1rem = 16px if font root is 100% ands browser defaults are used. */
+  --font-size-h1: 2.027rem; /* ~32px */
+  --font-size-h2: 1.802rem; /* ~29px */
+  --font-size-h3: 1.602rem; /* ~26px */
+  --font-size-h4: 1.424rem; /* ~23px */
+  --font-size-h5: 1.266rem; /* ~20px */
+  --font-size-h6: 1.125rem; /* 18px */
+  --font-size-sm: 0.889rem; /* ~14px */
+  --font-size-xs: 0.79rem; /* ~13px */
+  --font-size-xxs: 0.702rem; /* ~11px */
+
+  --font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-monospace: "JetBrains Mono", "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --text-color: var(--color-raisin-black);
+
+  --mark-background: var(--color-sunglow);
+  --code-background: var(--page-background);
+
+  --p-margin--y: var(--spacing-md);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--card-tiser);
+  background-image: url(../images/bg.svg);
+  background-size: 512px, cover, 26rem;
+  background-position: center, 0% 0%, top;
+  background-repeat: repeat-y;
+
+}
+
+p {
+  margin-top: var(--p-margin--y);
+  margin-bottom: var(--p-margin--y);
+}
+
+small {
+  font-size: 80%;
+  font-weight: normal;
+}
+
+big {
+  font-size: 120%;
+  font-weight: normal;
+}
+
+mark {
+  padding: var(--spacing-xs);
+  background-color: var(--mark-background);
+}
+
+code {
+  font-family: var(--font-monospace);
+  font-size: 90%;
+  padding: 0.2em 0.4em;
+  word-break: break-all;
+  border-radius: var(--radius-xs);
+  background-color: var(--code-background);
+}
+
+pre code {
+  // Fixes unwanted padding for first and last line of code.
+  padding: unset;
+}
+
+html {
+  // Initial for (R)EM.
+  font-size: 16px;
+}
+
+@import 'view-mod/_view-mod.less';
+@import '_variables.less';
+@import '_mixins.less';
+@import '_media-color-scheme-options.less';
